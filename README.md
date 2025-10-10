@@ -27,6 +27,10 @@ This project implements a transparent communication bridge between PC RDS softwa
 
 The **`hardware/`** folder contains the complete PCB design for this project, including schematics and PCB layout. This hardware has been **built and fully tested** in real-world conditions.
 
+### MRDS1322 RDS Encoder
+
+The **MRDS1322** RDS encoder chip is from [Pira.cz](http://pira.cz). Datasheet available in the `hardware/` folder. Use the **TinyRDS** Windows program (also from Pira.cz) to send RDS data through this ESP32 bridge to the encoder.
+
 ## Pin Assignments
 
 ### TFT Display (NV3007) - SPI Interface

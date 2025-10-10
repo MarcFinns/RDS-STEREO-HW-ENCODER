@@ -122,7 +122,8 @@ void DisplayManager::taskFunction(void *parameter)
 {
   DisplayData receivedData; // Buffer for PS/RT data from queue
 
-  delay(7000);
+  // Show copyright for a few sec..
+  delay(6000);
 
   // Main task loop - runs forever at high frequency
   while (true)
@@ -154,8 +155,8 @@ void DisplayManager::taskFunction(void *parameter)
     updatePeak(rightCh); // Track right channel peak marker
 
     // ===== OPTIMIZED REDRAW =====
-    // Only redraw VU bars when values actually change (prevents unnecessary SPI
-    // traffic)
+    // Only redraw VU bars when values actually change (prevents unnecessary
+    // SPI traffic)
 
     // Left channel VU bar update
     if (leftCh.avg != prevLenL || leftCh.peak != prevPeakL)
@@ -206,7 +207,7 @@ void DisplayManager::initializeTFTDisplay()
   // Note: width/height are native portrait dimensions, rotation 1 makes it
   // landscape
   gfx = new Arduino_NV3007(
-      bus, TFT_RST, 3 /* rotation */, false /* IPS */,
+      bus, TFT_RST, 1 /* rotation */, false /* IPS */,
       DISPLAY_HEIGHT /* native width */, DISPLAY_WIDTH /* native height */,
       12 /* col offset 1 */, 0 /* row offset 1 */, 14 /* col offset 2 */,
       0 /* row offset 2 */, nv3007_279_init_operations,
@@ -548,7 +549,8 @@ void DisplayManager::updateTextDisplay()
  * @brief Draw one VU meter bar with color gradient and peak marker
  * @param ch Channel data structure (left or right)
  * @param newLen Bar length in pixels (0 to VU_BAR_WIDTH)
- * @param newPeak Peak marker position (-1 if hidden, 0-VU_BAR_WIDTH if visible)
+ * @param newPeak Peak marker position (-1 if hidden, 0-VU_BAR_WIDTH if
+ * visible)
  *
  * Professional VU meter rendering with color zones:
  *   • Green zone: 0-70% (safe audio levels)
@@ -795,7 +797,8 @@ uint16_t DisplayManager::getVUColor(int position)
 }
 
 /**
- * @brief Sample ADC and update channel target level using moving maximum filter
+ * @brief Sample ADC and update channel target level using moving maximum
+ * filter
  * @param ch Channel structure to update (leftCh or rightCh)
  *
  * Moving maximum filter for audio level detection:
