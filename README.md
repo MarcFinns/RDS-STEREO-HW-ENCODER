@@ -23,6 +23,10 @@ This project implements a transparent communication bridge between PC RDS softwa
 - **NV3007 428x142 TFT display**
 - **Dual-channel audio input** for VU meters
 
+### Hardware Design Files
+
+The **`hardware/`** folder contains the complete PCB design for this project, including schematics and PCB layout. This hardware has been **built and fully tested** in real-world conditions.
+
 ## Pin Assignments
 
 ### TFT Display (NV3007) - SPI Interface
