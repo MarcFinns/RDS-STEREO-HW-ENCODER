@@ -1,10 +1,12 @@
-# ESP32 RDS Stereo Encoder Bridge
+# RDS Stereo Encoder for FM radio 
 
-A sophisticated dual-core ESP32 system that creates a transparent communication bridge between PC RDS software and MRDS1322 RDS encoder chips, while providing real-time visual display of RDS data and audio levels.
+A hardware RDS Stereo Encoder for FM radio comprised of:
+- A signal processing board
+- A digital board that provides a transparent communication bridge between PC RDS software and the DS encoder chips, while simultaneously providing real-time visual display of RDS data (PS/RT) and audio levels (VU meters) on a TFT display.
 
 ## System Overview
 
-This project implements a transparent communication bridge between PC RDS software and MRDS1322 RDS encoder chip, while simultaneously providing real-time visual display of RDS data (PS/RT) and audio levels (VU meters) on a TFT display.
+This project specifically describes the software implementation of the digital board. The schematic and PCB of the whole system are in the **HARDWARE** folder.
 
 ### Key Features
 
